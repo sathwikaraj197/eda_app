@@ -29,8 +29,7 @@ def create_missing_values_bar(df):
 
 def find_cat_cont_columns(df): ## Logic to Separate Continuous & Categorical Columns
     cont_columns, cat_columns = [],[]
-    for col in df.columns:
-        print(col, df[col].dtype)
+    for col in df.columns:        
         if len(df[col].unique()) <= 25 or df[col].dtype == np.object_: ## If less than 25 unique values
             cat_columns.append(col.strip())
         else:
@@ -62,7 +61,7 @@ if upload: ## File as Bytes
         st.markdown("<span style='font-weight:bold;'>{}</span> : {}".format("Continuous Columns", len(cont_columns)), unsafe_allow_html=True)
         st.write(cont_columns)
         
-        corr_df = df.corr()
+        corr_df = df[cont_columns].corr()
         corr_fig = create_correlation_chart(corr_df)
         
         st.subheader("3. Correlation Chart")
