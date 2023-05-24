@@ -40,7 +40,7 @@ def find_cat_cont_columns(df): ## Logic to Separate Continuous & Categorical Col
 st.set_page_config(page_icon=":bar_chart:", page_title="EDA Automated using Python")
 
 st.title("Harnessing the Power of Python to Automate EDA :bar_chart: :tea: :coffee:")
-st.caption("Upload CSV file to see various Charts related to EDA. Please upload file that has both continuous columns and categorical columns. Once you upload file, various charts, widgets and basic stats will be displayed.")
+st.caption("Upload CSV file to see various Charts related to EDA. Please upload file that has both continuous columns and categorical columns.")
 upload = st.file_uploader(label="Upload File Here:", type=["csv"])
 
 if upload: ## File as Bytes
